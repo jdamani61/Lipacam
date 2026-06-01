@@ -5,8 +5,6 @@ import Link from 'next/link'
 import JsonLd from '@components/common/JsonLd'
 import { booksCategorySchema, breadcrumbSchema, faqSchema } from '@lib/seo/schemas'
 
-export { metadata } from './metadata'
-
 const LEVELS = ['Maternelle', 'Primaire', 'Collège', 'Lycée']
 const SUBJECTS = ['Mathématiques', 'Français', 'SVT', 'Physique', 'Histoire-Géo', 'Anglais', 'Philosophie', 'Informatique']
 const PUBLISHERS = ['EDICEF', 'Nathan', 'Hatier', 'ITEC', 'Bordas', 'Hachette']
