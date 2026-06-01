@@ -1,0 +1,126 @@
+/* Navbar Styles */
+
+.navbar {
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbarLibrairie {
+  border-bottom: 3px solid #0A3A75;
+}
+
+.navbarPapeterie {
+  border-bottom: 3px solid #D62828;
+}
+
+.navbarContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.navbarLogo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0A3A75;
+  text-decoration: none;
+  margin-right: 40px;
+  font-family: 'Playfair Display', serif;
+}
+
+.navbarMenu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}
+
+.navbarMenu li a {
+  color: #1A1A1A;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbarMenu li a:hover {
+  color: #0A3A75;
+}
+
+.navbarActions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.navbarSearch {
+  padding: 10px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  width: 200px;
+  font-size: 14px;
+}
+
+.navbarIcon {
+  font-size: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.navbarIcon:hover {
+  transform: scale(1.1);
+}
+
+.navbarToggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #0A3A75;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .navbarToggle {
+    display: block;
+  }
+
+  .navbarMenu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    gap: 0;
+  }
+
+  .navbarMenu.open {
+    display: flex;
+  }
+
+  .navbarMenu li {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .navbarSearch {
+    display: none;
+  }
+
+  .navbarContainer {
+    height: auto;
+    padding: 15px 20px;
+  }
+}

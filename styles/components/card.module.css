@@ -1,0 +1,46 @@
+/* Card Styles */
+
+.card {
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cardLibrary {
+  border-left: 4px solid #0A3A75;
+  background-color: #F5F5F7;
+}
+
+.cardLibrary:hover {
+  box-shadow: 0 8px 16px rgba(10, 58, 117, 0.15);
+}
+
+.cardStationery {
+  border-bottom: 4px solid #D62828;
+}
+
+.cardStationery:hover {
+  box-shadow: 0 8px 16px rgba(214, 40, 40, 0.15);
+}
+
+.cardDefault:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Parts */
+.cardHeader {
+  padding: 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.cardBody {
+  padding: 16px;
+}
+
+.cardFooter {
+  padding: 16px;
+  border-top: 1px solid #e0e0e0;
+  background-color: #f9f9f9;
+}

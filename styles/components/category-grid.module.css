@@ -1,0 +1,169 @@
+/* Category Grid Section Styles */
+
+.categoryGrid {
+  padding: 80px 0;
+  background-color: #FFFFFF;
+}
+
+.categoryLibrairie {
+  background-color: #FFFFFF;
+}
+
+.categoryPapeterie {
+  background-color: #F9F9F9;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sectionHeader h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  margin-bottom: 15px;
+  color: #0A3A75;
+}
+
+.sectionHeader p {
+  font-size: 18px;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.categories {
+  display: grid;
+  gap: 25px;
+}
+
+.grid2 {
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.grid3 {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.grid4 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Category Link */
+.categoryLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.categoryCard {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.categoryCard:hover {
+  transform: translateY(-5px);
+}
+
+.categoryImage {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+.categoryImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.categoryCard:hover .categoryImage img {
+  transform: scale(1.1);
+}
+
+.categoryIcon {
+  font-size: 48px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.categoryContent {
+  padding: 20px;
+  text-align: center;
+}
+
+.categoryName {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #1A1A1A;
+}
+
+.categoryDescription {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.categoryCount {
+  font-size: 12px;
+  color: #0A3A75;
+  font-weight: 600;
+}
+
+.categoryHover {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  background: linear-gradient(to top, rgba(10, 58, 117, 0.9), transparent);
+  color: #FFFFFF;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  font-weight: 600;
+}
+
+.categoryCard:hover .categoryHover {
+  transform: translateY(0);
+}
+
+.categoryHover span {
+  display: inline-block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .categoryGrid {
+    padding: 50px 0;
+  }
+
+  .sectionHeader h2 {
+    font-size: 28px;
+  }
+
+  .sectionHeader p {
+    font-size: 16px;
+  }
+
+  .grid2,
+  .grid3,
+  .grid4 {
+    grid-template-columns: 1fr;
+  }
+
+  .categoryImage {
+    height: 150px;
+  }
+
+  .categoryName {
+    font-size: 16px;
+  }
+}

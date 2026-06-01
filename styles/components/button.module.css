@@ -1,0 +1,64 @@
+/* Button Styles */
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* Sizes */
+.btnSm {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.btnMd {
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+.btnLg {
+  padding: 16px 32px;
+  font-size: 18px;
+}
+
+/* Variants */
+.btnPrimary {
+  background-color: #0A3A75;
+  color: #FFFFFF;
+}
+
+.btnPrimary:hover {
+  background-color: #0E1E3A;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(10, 58, 117, 0.3);
+}
+
+.btnSecondary {
+  background-color: transparent;
+  color: #0A3A75;
+  border: 2px solid #0A3A75;
+}
+
+.btnSecondary:hover {
+  background-color: #0A3A75;
+  color: #FFFFFF;
+}
+
+.btnPromo {
+  background-color: #D62828;
+  color: #FFFFFF;
+}
+
+.btnPromo:hover {
+  background-color: #a71f1f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(214, 40, 40, 0.3);
+}

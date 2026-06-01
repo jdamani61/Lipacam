@@ -1,0 +1,104 @@
+/* Hero Section Styles */
+
+.hero {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0A3A75 0%, #0E1E3A 100%);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.heroLibrairie {
+  background: linear-gradient(135deg, #0A3A75 0%, #0E1E3A 100%);
+  color: #FFFFFF;
+}
+
+.heroPapeterie {
+  background: linear-gradient(135deg, #D62828 0%, #a71f1f 100%);
+  color: #FFFFFF;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  padding: 60px 20px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.heroTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.heroSubtitle {
+  font-size: 20px;
+  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.heroCtas {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.heroCtas button {
+  min-width: 200px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 350px;
+  }
+
+  .heroTitle {
+    font-size: 32px;
+  }
+
+  .heroSubtitle {
+    font-size: 16px;
+  }
+
+  .heroContent {
+    padding: 40px 20px;
+  }
+
+  .heroCtas {
+    flex-direction: column;
+  }
+
+  .heroCtas button {
+    width: 100%;
+  }
+}
