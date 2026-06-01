@@ -458,7 +458,7 @@ export default function BlogPage() {
             <Link href="/papeterie" style={{ padding: '12px 24px', backgroundColor: '#D62828', color: '#FFFFFF', borderRadius: '6px', textDecoration: 'none', fontWeight: '600' }}>
               ✏️ Papeterie
             </Link>
-            <Link href="/à-propos" style={{ padding: '12px 24px', backgroundColor: '#FFFFFF', color: '#0A3A75', border: '2px solid #0A3A75', borderRadius: '6px', textDecoration: 'none', fontWeight: '600' }}>
+            <Link href="/about" style={{ padding: '12px 24px', backgroundColor: '#FFFFFF', color: '#0A3A75', border: '2px solid #0A3A75', borderRadius: '6px', textDecoration: 'none', fontWeight: '600' }}>
               🏢 À propos
             </Link>
             <Link href="/contact" style={{ padding: '12px 24px', backgroundColor: '#FFFFFF', color: '#666', border: '2px solid #e0e0e0', borderRadius: '6px', textDecoration: 'none', fontWeight: '600' }}>

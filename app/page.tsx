@@ -659,10 +659,16 @@ export default function Home() {
             </div>
             <div>
               <h5 style={{ color: '#F2C94C', fontSize: '12px', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px' }}>Librairie</h5>
-              {['Livres Scolaires', 'Parascolaire', 'Par Niveau', 'Éditeurs', 'Blog & Conseils'].map((l) => (
-                <div key={l} style={{ marginBottom: '8px' }}>
-                  <Link href={`/librairie/${l.toLowerCase().replace(/ /g, '-')}`} style={{ color: 'rgba(255,255,255,0.65)', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s' }}>
-                    {l}
+              {[
+                { label: 'Livres Scolaires', href: '/librairie/livres-scolaires' },
+                { label: 'Parascolaire', href: '/librairie/parascolaire' },
+                { label: 'Par Niveau', href: '/librairie/par-niveau' },
+                { label: 'Éditeurs', href: '/librairie/editeurs' },
+                { label: 'Blog & Conseils', href: '/blog' }
+              ].map((item) => (
+                <div key={item.label} style={{ marginBottom: '8px' }}>
+                  <Link href={item.href} style={{ color: 'rgba(255,255,255,0.65)', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s' }}>
+                    {item.label}
                   </Link>
                 </div>
               ))}
@@ -679,10 +685,15 @@ export default function Home() {
             </div>
             <div>
               <h5 style={{ color: '#F2C94C', fontSize: '12px', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px' }}>Aide</h5>
-              {['FAQ', 'Livraison & Retours', 'Nous Contacter', 'À propos'].map((l) => (
-                <div key={l} style={{ marginBottom: '8px' }}>
-                  <Link href={`/${l.toLowerCase().replace(/ /g, '-').replace(/&/g, 'et')}`} style={{ color: 'rgba(255,255,255,0.65)', textDecoration: 'none', fontSize: '14px' }}>
-                    {l}
+              {[
+                { label: 'FAQ', href: '/faq' },
+                { label: 'Livraison & Retours', href: '/livraison-et-retours' },
+                { label: 'Nous Contacter', href: '/contact' },
+                { label: 'À propos', href: '/about' }
+              ].map((item) => (
+                <div key={item.label} style={{ marginBottom: '8px' }}>
+                  <Link href={item.href} style={{ color: 'rgba(255,255,255,0.65)', textDecoration: 'none', fontSize: '14px' }}>
+                    {item.label}
                   </Link>
                 </div>
               ))}
