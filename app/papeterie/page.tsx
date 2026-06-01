@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import { Hero, FeaturedProducts, CategoryGrid } from '@components/common'
 
