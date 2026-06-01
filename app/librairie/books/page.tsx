@@ -91,7 +91,7 @@ export default function BooksPage() {
             <h1 style={{ fontSize: 'clamp(28px, 4vw, 52px)', fontFamily: 'Playfair Display, serif', fontWeight: '800', marginBottom: '16px', lineHeight: '1.2' }}>
               Livres Scolaires au Cameroun
             </h1>
-            <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.8)', maxWidth: '650px', lineHeight: '1.7', marginBottom: '30px' }}>
+            <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.8)', maxWidth: '650px', lineHeight: '1.7', marginBottom: '60+px' }}>
               Manuels officiels, ouvrages parascolaires et annales d'examens — conformes aux programmes
               camerounais, du préscolaire au lycée. Livraison à Yaoundé &amp; Douala en 24-48h.
             </p>
@@ -264,7 +264,7 @@ export default function BooksPage() {
                   Chez <strong>Lipacam</strong>, nous proposons la plus grande sélection de{' '}
                   <strong>livres scolaires au Cameroun</strong> — des manuels officiels rigoureusement
                   conformes aux programmes du Ministère de l'Éducation, jusqu'aux ouvrages parascolaires
-                  indispensables pour réussir les examens. Depuis 1993, nous accompagnons chaque élève,
+                  indispensables pour réussir les examens. Depuis 1963, nous accompagnons chaque élève,
                   du préscolaire au lycée, avec des ouvrages de qualité et accessibles.
                 </p>
 

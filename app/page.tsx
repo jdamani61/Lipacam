@@ -50,7 +50,7 @@ export default function Home() {
             marginBottom: '28px',
           }}
         >
-          Référence au Cameroun depuis 1993
+          Référence au Cameroun depuis 1963
         </div>
 
         {/* Main Title */}
@@ -152,7 +152,7 @@ export default function Home() {
           }}
         >
           {[
-            { number: '30+', label: 'ans d\'expérience' },
+            { number: '60+', label: 'ans d\'expérience' },
             { number: '1 500+', label: 'ouvrages disponibles' },
             { number: '2', label: 'villes couvertes' },
             { number: '50 000+', label: 'familles servies' },
@@ -329,8 +329,8 @@ export default function Home() {
             {[
               {
                 icon: '🏛️',
-                title: '30 ans de confiance',
-                text: 'Fondée en 1993 par Tiani, Lipacam est l\'institution de référence pour des millions de familles camerounaises.',
+                title: '60+ ans de confiance',
+                text: 'Fondée en 1963 par Tiani, Lipacam est l\'institution de référence pour des millions de familles camerounaises.',
               },
               {
                 icon: '✅',
@@ -654,7 +654,7 @@ export default function Home() {
             <div>
               <h4 style={{ color: '#FFFFFF', fontSize: '20px', fontFamily: 'Playfair Display, serif', marginBottom: '14px' }}>Lipacam</h4>
               <p style={{ fontSize: '13px', lineHeight: '1.8' }}>
-                La référence camerounaise en librairie scolaire et papeterie & matériel de bureau depuis 1993.
+                La référence camerounaise en librairie scolaire et papeterie & matériel de bureau depuis 1963.
               </p>
             </div>
             <div>

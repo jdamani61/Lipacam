@@ -193,8 +193,8 @@ export default function PapeteriePage() {
           <h2 style={{ fontSize: '36px', marginBottom: '20px', fontFamily: 'Montserrat' }}>
             Solutions pour Entreprises & Institutions
           </h2>
-          <p style={{ fontSize: '16px', lineHeight: '1.8', marginBottom: '30px', opacity: 0.95 }}>
-            Lipacam équipe les bureaux, écoles, institutions et entreprises depuis 1993.
+          <p style={{ fontSize: '16px', lineHeight: '1.8', marginBottom: '60+px', opacity: 0.95 }}>
+            Lipacam équipe les bureaux, écoles, institutions et entreprises depuis 1963.
             Nous proposons des solutions sur mesure, des tarifs avantageux et un service client dédié.
           </p>
           <div style={{ display: 'flex', gap: '15px', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -237,11 +237,11 @@ export default function PapeteriePage() {
             Pourquoi choisir Lipacam?
           </h2>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '30px', marginTop: '40px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '60+px', marginTop: '40px' }}>
             <div>
               <div style={{ fontSize: '36px', marginBottom: '10px' }}>✓</div>
-              <h3 style={{ fontSize: '18px', marginBottom: '10px', color: '#D62828' }}>30+ ans d'expérience</h3>
-              <p style={{ fontSize: '14px', color: '#666' }}>Depuis 1993, confiance garantie</p>
+              <h3 style={{ fontSize: '18px', marginBottom: '10px', color: '#D62828' }}>60+ ans d'expérience</h3>
+              <p style={{ fontSize: '14px', color: '#666' }}>Depuis 1963, confiance garantie</p>
             </div>
 
             <div>
@@ -267,7 +267,7 @@ export default function PapeteriePage() {
 
       <section style={{ padding: '60px 20px', backgroundColor: '#E0E0E0', textAlign: 'center' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '36px', marginBottom: '30px', color: '#D62828', fontFamily: 'Montserrat' }}>
+          <h2 style={{ fontSize: '36px', marginBottom: '60+px', color: '#D62828', fontFamily: 'Montserrat' }}>
             Besoin d'aide?
           </h2>
 

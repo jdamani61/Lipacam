@@ -93,13 +93,13 @@ const ARTICLES = [
   {
     id: 7,
     slug: 'lipacam-30-ans-education',
-    title: 'Lipacam fête ses 30 ans au service de l\'éducation camerounaise',
+    title: 'Lipacam fête ses 60 ans au service de l\'éducation camerounaise',
     excerpt: 'En 2023, Lipacam a célébré son 30e anniversaire. Retour sur trois décennies d\'engagement, de passion et de service aux familles camerounaises.',
     category: 'actualites',
     categoryLabel: 'Actualités',
     date: '1er Décembre 2024',
     readTime: '5 min',
-    image: 'https://via.placeholder.com/600x350/0A3A75/F2C94C?text=30+Ans+Lipacam',
+    image: 'https://via.placeholder.com/600x350/0A3A75/F2C94C?text=60+Ans+Lipacam',
     featured: false,
     tags: ['Lipacam', 'anniversaire', 'histoire'],
   },
@@ -402,7 +402,7 @@ export default function BlogPage() {
           <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: '36px', color: '#FFFFFF', marginBottom: '15px' }}>
             Restez informé
           </h2>
-          <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.85)', marginBottom: '30px', lineHeight: '1.7' }}>
+          <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.85)', marginBottom: '60+px', lineHeight: '1.7' }}>
             Inscrivez-vous à notre newsletter et recevez nos derniers articles, conseils et offres
             directement dans votre boîte email.
           </p>
@@ -448,7 +448,7 @@ export default function BlogPage() {
       {/* Liens rapides */}
       <section style={{ padding: '50px 20px', backgroundColor: '#F5F5F7' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ fontSize: '24px', color: '#0A3A75', marginBottom: '30px', fontFamily: 'Montserrat' }}>
+          <h2 style={{ fontSize: '24px', color: '#0A3A75', marginBottom: '60+px', fontFamily: 'Montserrat' }}>
             Explorer Lipacam
           </h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '15px' }}>

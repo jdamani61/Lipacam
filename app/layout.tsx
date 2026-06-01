@@ -3,7 +3,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Lipacam - Librairie & Papeterie',
-  description: 'La référence camerounaise en librairie scolaire et papeterie depuis 1993',
+  description: 'La référence camerounaise en librairie scolaire et papeterie depuis 1963',
 }
 
 export default function RootLayout({

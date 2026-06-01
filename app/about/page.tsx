@@ -8,7 +8,7 @@ export default function AboutPage() {
           <h1 style={{ fontSize: '42px', marginBottom: '10px', fontFamily: 'Playfair Display' }}>
             À propos de Lipacam
           </h1>
-          <p style={{ fontSize: '18px' }}>Depuis 1993, au service de l'éducation camerounaise</p>
+          <p style={{ fontSize: '18px' }}>Depuis 1963, au service de l'éducation camerounaise</p>
         </div>
       </header>
 
@@ -19,8 +19,8 @@ export default function AboutPage() {
               Notre Histoire
             </h2>
             <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#666', marginBottom: '15px' }}>
-              Fondée en 1993 par Tiani, Lipacam a commencé comme une simple librairie scolaire à Yaoundé.
-              Depuis plus de 30 ans, nous accompagnons les élèves, parents et enseignants du Cameroun.
+              Fondée en 1963 par Tiani, Lipacam a commencé comme une simple librairie scolaire à Yaoundé.
+              Depuis plus de 60 ans, nous accompagnons les élèves, parents et enseignants du Cameroun.
             </p>
             <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#666' }}>
               Aujourd'hui, avec nos magasins à Yaoundé et Douala, et notre plateforme en ligne,
@@ -48,7 +48,7 @@ export default function AboutPage() {
                   Fiabilité
                 </h3>
                 <p style={{ fontSize: '14px', color: '#666' }}>
-                  Des produits de qualité garantis depuis 30 ans
+                  Des produits de qualité garantis depuis 60 ans
                 </p>
               </div>
               <div>

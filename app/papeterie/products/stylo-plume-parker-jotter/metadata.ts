@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Stylo Plume Parker Jotter – Écriture Premium | Lipacam',
     description:
-      'Le stylo plume emblématique Parker Jotter. Corps acier inoxydable, plume fine, pour étudiants et professionnels. Chez Lipacam depuis 1993.',
+      'Le stylo plume emblématique Parker Jotter. Corps acier inoxydable, plume fine, pour étudiants et professionnels. Chez Lipacam depuis 1963.',
     url: 'https://lipacam.cm/papeterie/products/stylo-plume-parker-jotter',
     siteName: 'Lipacam',
     locale: 'fr_CM',

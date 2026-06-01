@@ -113,8 +113,8 @@ export default function LibrairieHome() {
           <h2 style={{ fontSize: '36px', marginBottom: '20px', color: '#0A3A75' }}>
             À propos de Lipacam
           </h2>
-          <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#666', marginBottom: '30px' }}>
-            Depuis 1993, Lipacam accompagne les élèves, parents et enseignants du Cameroun.
+          <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#666', marginBottom: '60+px' }}>
+            Depuis 1963, Lipacam accompagne les élèves, parents et enseignants du Cameroun.
             Notre mission : fournir des ouvrages fiables, conformes aux programmes, et accessibles à tous.
           </p>
           <Link
