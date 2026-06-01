@@ -5,8 +5,6 @@ import Link from 'next/link'
 import JsonLd from '@components/common/JsonLd'
 import { productSchema, breadcrumbSchema, faqSchema } from '@lib/seo/schemas'
 
-export { metadata } from './metadata'
-
 /* ─── Données produit ─────────────────────────────────────── */
 const PRODUCT = {
   id: 'parker-jotter-plume-acier',
