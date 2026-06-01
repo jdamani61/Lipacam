@@ -3,7 +3,6 @@
 import React from 'react'
 import Link from 'next/link'
 import Card from './Card'
-import styles from '@styles/components/category-grid.module.css'
 
 interface Category {
   id: string

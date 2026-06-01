@@ -1,6 +1,5 @@
 import React from 'react'
 import Button from './Button'
-import styles from '@styles/components/hero.module.css'
 
 interface HeroProps {
   title: string

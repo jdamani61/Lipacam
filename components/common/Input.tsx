@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from '@styles/components/input.module.css'
 
 interface InputProps {
   type?: 'text' | 'email' | 'password' | 'number' | 'search'

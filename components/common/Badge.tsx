@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from '@styles/components/badge.module.css'
 
 interface BadgeProps {
   children: React.ReactNode

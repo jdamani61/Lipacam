@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react'
 import Link from 'next/link'
-import styles from '@styles/components/navbar.module.css'
 
 interface NavbarProps {
   logo?: string

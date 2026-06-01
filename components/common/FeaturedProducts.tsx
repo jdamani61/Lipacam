@@ -4,7 +4,6 @@ import React from 'react'
 import Card from './Card'
 import Badge from './Badge'
 import Button from './Button'
-import styles from '@styles/components/featured-products.module.css'
 
 interface Product {
   id: string

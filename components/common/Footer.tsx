@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import styles from '@styles/components/footer.module.css'
 
 interface FooterProps {
   universe?: 'librairie' | 'papeterie'
