@@ -5,6 +5,7 @@ export const dynamic = 'force-dynamic'
 import { useState } from 'react'
 import Link from 'next/link'
 import JsonLd from '@components/common/JsonLd'
+import { getProducts } from '@lib/data'
 import { booksCategorySchema, breadcrumbSchema, faqSchema } from '@lib/seo/schemas'
 
 const LEVELS = ['Maternelle', 'Primaire', 'Collège', 'Lycée']
@@ -12,16 +13,25 @@ const SUBJECTS = ['Mathématiques', 'Français', 'SVT', 'Physique', 'Histoire-G�
 const PUBLISHERS = ['EDICEF', 'Nathan', 'Hatier', 'ITEC', 'Bordas', 'Hachette']
 const TYPES = ['Manuels officiels', 'Parascolaire', 'Annales', 'Cahiers d\'activités']
 
-const SAMPLE_BOOKS = [
-  { id: 1, title: 'Mathématiques 3e – Manuel Officiel', level: 'Collège', subject: 'Mathématiques', publisher: 'EDICEF', price: 8500, badge: 'Nouveau', cover: '#0A3A75' },
-  { id: 2, title: 'Français Littérature Africaine – Lycée', level: 'Lycée', subject: 'Français', publisher: 'Nathan', price: 12000, badge: null, cover: '#0E1E3A' },
-  { id: 3, title: 'SVT Biologie – Tle C/D', level: 'Lycée', subject: 'SVT', publisher: 'Hachette', price: 11500, badge: '-15%', cover: '#7A1E2C' },
-  { id: 4, title: 'Physique-Chimie – 4e', level: 'Collège', subject: 'Physique', publisher: 'Hatier', price: 9000, badge: null, cover: '#0A3A75' },
-  { id: 5, title: 'Anglais Primaire – CM2', level: 'Primaire', subject: 'Anglais', publisher: 'ITEC', price: 6500, badge: 'Populaire', cover: '#0E1E3A' },
-  { id: 6, title: 'Eveil – Grande Section Maternelle', level: 'Maternelle', subject: 'Éveil', publisher: 'EDICEF', price: 4500, badge: null, cover: '#2D9CDB' },
-  { id: 7, title: 'Annales Maths Bac – Séries C/D', level: 'Lycée', subject: 'Mathématiques', publisher: 'ITEC', price: 7500, badge: 'Essentiel', cover: '#7A1E2C' },
-  { id: 8, title: 'Histoire-Géographie – 5e', level: 'Collège', subject: 'Histoire-Géo', publisher: 'Bordas', price: 8000, badge: null, cover: '#0A3A75' },
-]
+const LEVEL_LABELS: Record<string, string> = {
+  maternelle: 'Maternelle',
+  primaire: 'Primaire',
+  college: 'Collège',
+  lycee: 'Lycée',
+}
+const COVERS = ['#0A3A75', '#0E1E3A', '#7A1E2C', '#2D9CDB']
+
+const SAMPLE_BOOKS = getProducts({ universe: 'librairie' }).map((p, i) => ({
+  id: p.id,
+  slug: p.slug,
+  title: p.title,
+  level: LEVEL_LABELS[p.metadata.level] ?? 'Annales',
+  subject: p.metadata.subject ?? 'Annales',
+  publisher: p.metadata.publisher ?? p.brand ?? '',
+  price: p.price,
+  badge: p.badge ? p.badge.charAt(0).toUpperCase() + p.badge.slice(1) : null,
+  cover: COVERS[i % COVERS.length],
+}))
 
 const BOOKS_FAQS = [
   {
@@ -201,8 +211,12 @@ export default function BooksPage() {
               {/* Books Grid */}
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(195px, 1fr))', gap: '24px', marginBottom: '60px' }}>
                 {filtered.map((book) => (
-                  <article
+                  <Link
                     key={book.id}
+                    href={`/librairie/books/${book.slug}`}
+                    style={{ textDecoration: 'none', color: 'inherit' }}
+                  >
+                  <article
                     style={{ backgroundColor: '#FFFFFF', border: '1px solid #eee', borderRadius: '10px', overflow: 'hidden', transition: 'all 0.3s ease', cursor: 'pointer' }}
                     onMouseOver={(e) => { e.currentTarget.style.boxShadow = '0 8px 24px rgba(10,58,117,0.14)'; e.currentTarget.style.transform = 'translateY(-4px)' }}
                     onMouseOut={(e) => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'translateY(0)' }}
@@ -232,18 +246,18 @@ export default function BooksPage() {
                         <span style={{ fontSize: '17px', fontWeight: '800', color: '#0A3A75' }}>
                           {book.price.toLocaleString('fr-CM')} F
                         </span>
-                        <button
+                        <span
                           style={{
                             padding: '7px 14px', backgroundColor: '#0A3A75', color: '#FFFFFF',
-                            border: 'none', borderRadius: '6px', fontSize: '12px', fontWeight: '600',
-                            cursor: 'pointer',
+                            borderRadius: '6px', fontSize: '12px', fontWeight: '600',
                           }}
                         >
                           Voir →
-                        </button>
+                        </span>
                       </div>
                     </div>
                   </article>
+                  </Link>
                 ))}
               </div>
 

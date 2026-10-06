@@ -15,10 +15,27 @@ export default function ContactPage() {
     message: '',
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    // TODO: Send to backend/email service
+    setStatus('sending')
+    setErrorMessage('')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+      const data = await res.json().catch(() => ({}))
+      if (!res.ok) throw new Error(data.error ?? "L'envoi a échoué.")
+      setStatus('sent')
+      setFormData({ name: '', email: '', phone: '', subject: '', type: 'general', message: '' })
+    } catch (err) {
+      setErrorMessage(err instanceof Error ? err.message : "L'envoi a échoué.")
+      setStatus('error')
+    }
   }
 
   return (
@@ -180,8 +197,18 @@ export default function ContactPage() {
                   />
                 </div>
 
+                {status === 'sent' && (
+                  <p role="status" style={{ color: '#27ae60', fontWeight: 600 }}>
+                    Merci ! Votre message a bien été envoyé. Nous vous répondons rapidement.
+                  </p>
+                )}
+                {status === 'error' && (
+                  <p role="alert" style={{ color: '#D62828', fontWeight: 600 }}>{errorMessage}</p>
+                )}
+
                 <button
                   type="submit"
+                  disabled={status === 'sending'}
                   style={{
                     padding: '12px 30px',
                     backgroundColor: '#0A3A75',
@@ -196,7 +223,7 @@ export default function ContactPage() {
                   onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#0E1E3A')}
                   onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#0A3A75')}
                 >
-                  Envoyer le message
+                  {status === 'sending' ? 'Envoi en cours...' : 'Envoyer le message'}
                 </button>
               </form>
             </div>

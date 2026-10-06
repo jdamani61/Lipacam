@@ -93,3 +93,10 @@ Voir `lib/constants.ts` pour les configurations des univers, niveaux scolaires, 
 
 - Charte graphique complète: `C:\WorkSpace\Lipacam_Web\Document\`
 - Maquettes détaillées: Voir fichiers .docx dans le dossier documentation
+
+## ⚙️ Variables d'environnement
+
+| Variable | Rôle |
+|---|---|
+| `CONTACT_WEBHOOK_URL` | URL (Formspree, Zapier, Make...) qui reçoit les messages du formulaire de contact. Sans elle, `/api/contact` répond 503. |
+| `NEXT_PUBLIC_WHATSAPP_NUMBER` | Numéro WhatsApp au format international sans `+` (ex. `2376XXXXXXXX`) pour le bouton « Commander ». Sans lui, le bouton renvoie vers `/contact`. |

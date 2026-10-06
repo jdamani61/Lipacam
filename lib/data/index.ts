@@ -2,7 +2,7 @@ import productsData from './products.json'
 import categoriesData from './categories.json'
 import type { Product, Category, Universe, SchoolLevel } from './types'
 
-export const allProducts = productsData.products as Product[]
+export const allProducts = productsData.products as unknown as Product[]
 export const allCategories = categoriesData.categories as Category[]
 
 /* ── Products ──────────────────────────────────────────────── */
@@ -22,7 +22,7 @@ export function getProducts(filters?: {
   if (filters?.category)  results = results.filter(p => p.category === filters.category)
   if (filters?.badge)     results = results.filter(p => p.badge === filters.badge)
   if (filters?.featured)  results = results.filter(p => p.featured === true)
-  if (filters?.level)     results = results.filter(p => (p as any).metadata?.level === filters.level)
+  if (filters?.level)     results = results.filter(p => p.metadata?.level === filters.level)
   if (filters?.q) {
     const q = filters.q.toLowerCase()
     results = results.filter(p =>
