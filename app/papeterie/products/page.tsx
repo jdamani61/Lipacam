@@ -1,20 +1,21 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { Input } from '@components/common'
+import { getProducts, getCategories } from '@lib/data'
 
 export default function PapeterieProductsPage() {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
 
-  const categories = [
-    'Fournitures Scolaires',
-    'Matériel de Bureau',
-    'Archivage & Classeurs',
-    'Machines & Équipements',
-    'Accessoires Informatiques',
-    'Arts & Créativité',
-  ]
+  const categories = getCategories('papeterie').filter((c) => c.slug !== 'promotions')
+  const products = getProducts({ universe: 'papeterie' }).filter((p) => {
+    const matchCategory = selectedCategory === 'all' || p.category === selectedCategory
+    const q = searchTerm.trim().toLowerCase()
+    const matchSearch = !q || p.title.toLowerCase().includes(q) || p.tags.some((t) => t.toLowerCase().includes(q))
+    return matchCategory && matchSearch
+  })
 
   return (
     <main>
@@ -58,17 +59,17 @@ export default function PapeterieProductsPage() {
                   </label>
                 </li>
                 {categories.map((cat) => (
-                  <li key={cat} style={{ marginBottom: '10px' }}>
+                  <li key={cat.slug} style={{ marginBottom: '10px' }}>
                     <label style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
                       <input
                         type="radio"
                         name="category"
-                        value={cat}
-                        checked={selectedCategory === cat}
+                        value={cat.slug}
+                        checked={selectedCategory === cat.slug}
                         onChange={(e) => setSelectedCategory(e.target.value)}
                         style={{ marginRight: '8px' }}
                       />
-                      {cat}
+                      {cat.name}
                     </label>
                   </li>
                 ))}
@@ -82,83 +83,31 @@ export default function PapeterieProductsPage() {
               <p style={{ color: '#666' }}>
                 {selectedCategory === 'all'
                   ? 'Affichage de tous les produits'
-                  : `Affichage des produits: ${selectedCategory}`}
+                  : `${products.length} produit${products.length > 1 ? 's' : ''}`}
               </p>
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '20px' }}>
-              {/* Placeholder Product Cards */}
-              {[...Array(12)].map((_, i) => (
-                <div
-                  key={i}
-                  style={{
-                    border: '1px solid #e0e0e0',
-                    borderRadius: '8px',
-                    overflow: 'hidden',
-                    transition: 'all 0.3s ease',
-                  }}
+              {products.map((p) => (
+                <Link
+                  key={p.id}
+                  href={`/papeterie/products/${p.slug}`}
+                  style={{ border: '1px solid #e0e0e0', borderRadius: '8px', overflow: 'hidden', textDecoration: 'none', color: 'inherit' }}
                 >
-                  <div
-                    style={{
-                      width: '100%',
-                      height: '200px',
-                      backgroundColor: '#E0E0E0',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#999',
-                      fontSize: '14px',
-                    }}
-                  >
-                    Product {i + 1}
+                  <div style={{ width: '100%', height: '200px', backgroundColor: '#E0E0E0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#999', fontSize: '14px' }}>
+                    {p.brand ?? 'Lipacam'}
                   </div>
                   <div style={{ padding: '15px' }}>
-                    <h4 style={{ marginBottom: '8px', fontSize: '16px', fontWeight: '600' }}>
-                      Produit {i + 1}
-                    </h4>
-                    <p style={{ color: '#666', fontSize: '14px', marginBottom: '12px' }}>
-                      Description du produit
-                    </p>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <span style={{ fontSize: '18px', fontWeight: '700', color: '#D62828' }}>
-                        {(5000 + i * 1000).toLocaleString('fr-CM')} FCFA
-                      </span>
-                      <button
-                        style={{
-                          padding: '8px 16px',
-                          backgroundColor: '#D62828',
-                          color: '#FFFFFF',
-                          border: 'none',
-                          borderRadius: '4px',
-                          cursor: 'pointer',
-                          fontWeight: '600',
-                          fontSize: '12px',
-                        }}
-                      >
-                        Ajouter
-                      </button>
-                    </div>
+                    <h4 style={{ marginBottom: '8px', fontSize: '16px', fontWeight: '600' }}>{p.title}</h4>
+                    <p style={{ color: '#666', fontSize: '14px', marginBottom: '12px' }}>{p.shortDescription}</p>
+                    <span style={{ fontSize: '18px', fontWeight: '700', color: '#D62828' }}>
+                      {p.price.toLocaleString('fr-CM')} FCFA
+                    </span>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
 
-            <div style={{ marginTop: '40px', textAlign: 'center' }}>
-              <button
-                style={{
-                  padding: '12px 40px',
-                  backgroundColor: '#D62828',
-                  color: '#FFFFFF',
-                  border: 'none',
-                  borderRadius: '6px',
-                  fontSize: '16px',
-                  fontWeight: '600',
-                  cursor: 'pointer',
-                }}
-              >
-                Charger plus de produits
-              </button>
-            </div>
           </section>
         </div>
       </div>
