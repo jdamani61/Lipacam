@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import JsonLd from './JsonLd'
 import { productSchema, breadcrumbSchema } from '@lib/seo/schemas'
+import AddToCartButton from './AddToCartButton'
 import { getProducts } from '@lib/data'
 import type { Product } from '@lib/data/types'
 
 const SITE_URL = 'https://lipacam.cm'
-const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? ''
 
 const STOCK_LABEL: Record<Product['stockStatus'], string> = {
   in_stock: 'En stock',
@@ -49,13 +49,6 @@ export default function ProductDetail({ product, basePath, universeLabel, accent
   const related = getProducts({ universe: product.universe, category: product.category })
     .filter((p) => p.id !== product.id)
     .slice(0, 4)
-
-  const orderMessage = encodeURIComponent(
-    `Bonjour Lipacam, je souhaite commander : ${product.title} (réf. ${product.sku}) - ${formatPrice(product.price)}.`
-  )
-  const orderHref = WHATSAPP_NUMBER
-    ? `https://wa.me/${WHATSAPP_NUMBER}?text=${orderMessage}`
-    : `/contact?subject=${encodeURIComponent(product.title)}`
 
   const specs = Object.entries(product.metadata).filter(([key]) => key in METADATA_LABELS)
 
@@ -139,12 +132,7 @@ export default function ProductDetail({ product, basePath, universeLabel, accent
               </p>
 
               {product.stockStatus !== 'out_of_stock' && (
-                <Link
-                  href={orderHref}
-                  style={{ display: 'inline-block', padding: '14px 32px', backgroundColor: accent, color: '#FFFFFF', borderRadius: '6px', fontWeight: 700, textDecoration: 'none' }}
-                >
-                  {WHATSAPP_NUMBER ? 'Commander sur WhatsApp' : 'Demander ce produit'}
-                </Link>
+                <AddToCartButton slug={product.slug} accent={accent} />
               )}
             </div>
           </div>
