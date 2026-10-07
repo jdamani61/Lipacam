@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { CartProvider } from '@lib/cart/CartContext'
+import CartBadge from '@components/common/CartBadge'
 
 export const metadata: Metadata = {
   title: 'Lipacam - Librairie & Papeterie',
@@ -13,7 +15,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body>{children}</body>
+      <body>
+        <CartProvider>
+          {children}
+          <CartBadge />
+        </CartProvider>
+      </body>
     </html>
   )
 }
